@@ -108,6 +108,9 @@
       <a href="tambah.jsp" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-5 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition duration-300 shadow-lg inline-block">
         <i class="fas fa-arrow-left mr-2"></i>Kembali ke Form
       </a>
+      <a href="index.jsp" class="bg-gradient-to-r from-red-500 to-red-700 text-white py-2 px-5 rounded-lg font-semibold hover:from-red-600 hover:to-red-800 transform hover:scale-105 transition duration-300 shadow-lg inline-block">
+            <i class="fas fa-arrow-left mr-2"></i>Kembali ke Menu Utama
+       </a>
     </div>
   </div>
 

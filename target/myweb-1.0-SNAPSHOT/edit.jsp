@@ -164,7 +164,7 @@
             </button>
             
         </form>
-         <a href="index.jsp" class="mt-2 w-full bg-gradient-to-r from-red-500 to-pink-600 text-white py-3 px-4 rounded-lg font-semibold text-lg hover:from-red-600 hover:to-pink-700 transform hover:scale-105 transition duration-300 shadow-lg flex items-center justify-center">
+         <a href="Tampil" class="mt-2 w-full bg-gradient-to-r from-red-500 to-pink-600 text-white py-3 px-4 rounded-lg font-semibold text-lg hover:from-red-600 hover:to-pink-700 transform hover:scale-105 transition duration-300 shadow-lg flex items-center justify-center">
            <i class="fas fa-arrow-left mr-2"></i>
             Kembali
           </a>

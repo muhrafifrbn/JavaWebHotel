@@ -124,23 +124,31 @@
             timer: 2000,
             showConfirmButton: false
         });
-    } else if (status === 'sukses_hapus') { // <-- PERBAIKAN 1: 'else if' sekarang benar
-        
-        Swal.fire({ // <-- PERBAIKAN 2: Panggil Swal.fire() di sini
+    } else if (status === 'sukses_hapus') {
+        Swal.fire({
             icon: 'success',
             title: 'Berhasil Dihapus!',
             text: 'Data telah berhasil dihapus.',
             timer: 2000,
             showConfirmButton: false
         });
-
-    } else if (status === 'gagal') {
+    }else if (status === 'sukses_edit') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Data berhasil diedit.',
+                timer: 2000,
+                showConfirmButton: false
+        });
+          } else if (status === 'gagal') {
         Swal.fire({
             icon: 'error',
             title: 'Gagal!',
             text: 'Terjadi kesalahan saat memproses data.',
         });
-    }
+
+    } 
+        
 
     if (status) {
         window.history.replaceState({}, document.title, window.location.pathname);

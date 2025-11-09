@@ -4,4 +4,5 @@ com\mycompany\myweb\JakartaRestConfiguration.class
 crud\Simpan.class
 crud\Pemesanan.class
 com\mycompany\myweb\resources\JakartaEE11Resource.class
+crud\Edit.class
 koneksi\Koneksi.class

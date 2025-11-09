@@ -49,7 +49,7 @@
       </a>
 
      
-      <a href="/myweb/Tampil"
+      <a href="/myweb/tampil.jsp"
          class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 px-6 rounded-xl
                 shadow-lg hover:from-blue-600 hover:to-purple-700 hover:scale-105 transform transition duration-300
                 flex flex-col items-center justify-center">

@@ -1,0 +1,6 @@
+crud\Tampil.class
+com\mycompany\myweb\JakartaRestConfiguration.class
+crud\Simpan.class
+crud\Pemesanan.class
+com\mycompany\myweb\resources\JakartaEE11Resource.class
+koneksi\Koneksi.class

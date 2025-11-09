@@ -133,6 +133,23 @@
         });
         }
         
+        if (status === 'sukses_edit') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Data berhasil diedit.',
+                timer: 2000,
+                showConfirmButton: false
+        });
+          }
+        else if (status === 'gagal') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: 'Terjadi kesalahan saat mengedit data.',
+        });
+        }
+        
         if (status) {
          window.history.replaceState({}, document.title, window.location.pathname);
          }

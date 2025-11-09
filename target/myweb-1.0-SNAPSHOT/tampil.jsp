@@ -28,7 +28,7 @@
     </h2>
 
   
-    <form action="Tampil" method="GET" class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+    <form action="<%= request.getContextPath() %>/Tampil" method="GET" class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
       <div class="relative w-full sm:w-2/3">
         <input 
           type="text" 
@@ -84,10 +84,9 @@
                             <a href="Edit?id=<%= p.getId() %>" class=" text-blue-600 hover:text-blue-800 font-semibold mr-3">
                                 <i class="fas fa-edit mr-1"></i>Edit
                             </a>
-                            <a href="Hapus?id=<%= p.getId() %>" class="text-red-600 hover:text-red-800 font-semibold">
+                            <a href="Hapus?id=<%= p.getId() %>" class="link-hapus text-red-600 hover:text-red-800 font-semibold">
                                 <i class="fas fa-trash-alt mr-1"></i>Hapus
                             </a>
-                        </td>
                     </tr>
                 <%
                         }
@@ -113,27 +112,27 @@
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script >
-          const urlParams = new URLSearchParams(window.location.search);
-          const status = urlParams.get('status');
-          if (status === 'sukses_tambah') {
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: 'Data berhasil ditambahkan.',
-                timer: 2000,
-                showConfirmButton: false
-        });
-          }
-        else if (status === 'gagal') {
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+
+    if (status === 'sukses_tambah') {
         Swal.fire({
-            icon: 'error',
-            title: 'Gagal!',
-            text: 'Terjadi kesalahan saat memproses data.',
+            icon: 'success',
+            title: 'Berhasil!',
+            text: 'Data berhasil ditambahkan.',
+            timer: 2000,
+            showConfirmButton: false
         });
-        }
-        
-        if (status === 'sukses_edit') {
+    } else if (status === 'sukses_hapus') {
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil Dihapus!',
+            text: 'Data telah berhasil dihapus.',
+            timer: 2000,
+            showConfirmButton: false
+        });
+    }else if (status === 'sukses_edit') {
             Swal.fire({
                 icon: 'success',
                 title: 'Berhasil!',
@@ -141,20 +140,43 @@
                 timer: 2000,
                 showConfirmButton: false
         });
-          }
-        else if (status === 'gagal') {
+          } else if (status === 'gagal') {
         Swal.fire({
             icon: 'error',
             title: 'Gagal!',
-            text: 'Terjadi kesalahan saat mengedit data.',
+            text: 'Terjadi kesalahan saat memproses data.',
         });
-        }
+
+    } 
         
-        if (status) {
-         window.history.replaceState({}, document.title, window.location.pathname);
-         }
-    </script>
-    
+
+    if (status) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+</script>
+    <script>
+    const linkHapus = document.querySelectorAll('.link-hapus');
+    linkHapus.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const hrefTujuan = this.href;
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = hrefTujuan;
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
 

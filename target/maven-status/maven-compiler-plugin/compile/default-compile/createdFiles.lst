@@ -1,3 +1,4 @@
+crud\Hapus.class
 crud\Tampil.class
 com\mycompany\myweb\JakartaRestConfiguration.class
 crud\Simpan.class
